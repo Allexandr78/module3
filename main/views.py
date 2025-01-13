@@ -4,13 +4,17 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import context
 from django.template.defaultfilters import first
+from goods.models import Categories
 
 
 def index(request):
     """Render the index page"""
+    categories = Categories.objects.all()
+
     ctx = {
         "title": "Home-Главная",
         "content": "Магазин мебели HOME",
+        'categories': categories,
     }
     return render(request, "main/index.html", ctx)
 
