@@ -9,12 +9,9 @@ from goods.models import Categories
 
 def index(request):
     """Render the index page"""
-    categories = Categories.objects.all()
-
     ctx = {
         "title": "Home-Главная",
         "content": "Магазин мебели HOME",
-        'categories': categories,
     }
     return render(request, "main/index.html", ctx)
 
@@ -24,6 +21,6 @@ def about(request):
     ctx = {
         "title": "Home-О нас",
         "content": "О нас",
-        'text_on_page': 'Текс о том почему этот магазин такой класный, и такой хоррший товар.'
+        "text_on_page": "Текс о том почему этот магазин такой класный, и такой хоррший товар.",
     }
     return render(request, "main/about.html", ctx)

@@ -64,4 +64,15 @@ class Products(models.Model):
         verbose_name_plural = "Продукты"
 
     def __str__(self):
+        '''Return the name of the product'''
         return str(self.name)
+
+    def display_id(self):
+        '''Return id with leading zeros'''
+        return f"{self.id:05}"
+
+    def sell_price(self):
+        '''Return the price after discount'''
+        if self.discount:
+            return round(self.price - self.price * self.discount / 100, 2)
+        return self.price
