@@ -62,6 +62,7 @@ class Products(models.Model):
         db_table = "product"
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+        ordering = ("id",)
 
     def __str__(self):
         '''Return the name of the product'''
