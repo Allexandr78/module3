@@ -6,6 +6,7 @@ from django.template import context
 
 import goods
 from goods.models import Products
+from goods.utils import q_search
 
 
 
