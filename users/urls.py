@@ -1,6 +1,7 @@
 """This file is used to define the URL patterns for the users app. """
 
 from django.urls import path
+
 from users import views
 
 app_name = "users"
